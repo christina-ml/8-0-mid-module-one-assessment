@@ -31,17 +31,17 @@ function getTotalCount(animals) {
   // step 1 - Determine your output data type and default value
   let animalCount = 0; // number
   // step 2 - Define your loop
-  // for (let i = 0; i < animals.length; i++) {
-    for (let animal of animals) {
-    }
+  for (let i = 0; i < animals.length; i++) {
     // step 3 - Accumulate
-
-
+    let count = animals[i].count;
+    // console.log(count); // the count of all indexed animals
+      animalCount += count;
+    }
     // outside of for loop
     return animalCount; // number
   }
-  
-console.log(getTotalCount(animals));
+// console.log(getTotalCount(animals)); // node index.js
+// getTotalCount(animals); // npm test
 
 /**
  * FUNCTION #2
@@ -62,14 +62,14 @@ function getAllKinds(animals) {
   // step 2 - Define your loop
   for (let i = 0; i < animals.length; i++) {
     // step 3 - Accumulate
-
-
-
+    let kindOfAnimal = animals[i].kind;
+    kind.push(kindOfAnimal);
   }
   // outside of for loop
   return kind; // an array of strings, where each string is a kind of animal
 }
-// console.log(getAllKinds(animals));
+// console.log(getAllKinds(animals)); // node index.js
+// getAllKinds(animals); // npm test
 
 /**
  * FUNCTION #3
@@ -91,18 +91,20 @@ function getAllKinds(animals) {
  */
 function filterByCountMinimum(animals, minimum) {
   // step 1 - Determine your output data type and default value
-  let animalArrOfObj = []; // array of objects
+  let animalList = []; // array of objects
   // step 2 - Define your loop
   for (let i = 0; i < animals.length; i++) {
     // step 3 - Accumulate
-
-
-
+    let checkAnimal = animals[i];
+    if (checkAnimal.count >= minimum) {
+      animalList.push(checkAnimal);
+    }
   }
   // outside of for loop
-  return animalArrOfObj; // An array of objects, which represents all animals that have a count equal to or greater than the minimum.
+  return animalList; // An array of objects
 }
-// console.log(filterByCountMinimum(animals, minimum));
+// console.log(filterByCountMinimum(animals, 5)) // node index.js
+// filterByCountMinimum(animals, minimum) // npm test
 
 /**
  * FUNCTION #4
@@ -119,18 +121,21 @@ function filterByCountMinimum(animals, minimum) {
  */
 function getMostCommonAnimal(animals) {
   // step 1 - Determine your output data type and default value
-  let mostPopularAnimal = {}; // object of animal
+  let highestCount = null; // object of animal = empty
   // step 2 - Define your loop
   for (let i = 0; i < animals.length; i++) {
     // step 3 - Accumulate
-
-
-
+    // console.log(animals[i]); // animal object
+    // console.log(animals[i].count); // animal count for each object
+    if (animals[i].count > highestCount) {
+      highestCount = animals[i].count;
+    }
   }
   // outside of for loop
-  return // object of animal with highest count
+  return highestCount; // object of animal with highest count
 }
-// console.log(getMostCommonAnimal(animals));
+// console.log(getMostCommonAnimal(animals)); // node index.js
+// getMostCommonAnimal(animals) // npm test
 
 // Do not change anything below this line.
 module.exports = {
