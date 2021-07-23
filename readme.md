@@ -129,6 +129,14 @@ If there are multiple animals with the same highest count, return the one that a
 
 #### Example
 
+** GREG SAYS THIS EXAMPLE IS INCORRECT: **
+FOR MOST COMMON ANIMAL, ALL YOU NEED IS THE ANIMAL.
+Colin says on Slack, it should be: 
+```js
+getMostCommonAnimal(animals);
+//>   { kind: "Chicken", count: 11 }
+```
+Incorrect example:
 ```js
 getMostCommonAnimal(animals, 5);
 //> [
